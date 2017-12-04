@@ -1,0 +1,77 @@
+<!--
+  Generated template for the LocationmapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menus"></ion-icon>
+    </button>
+    <ion-title> <span class="maintitle"> Reserve now </span> <span class="subtitle">Thurs 2 july 9:2:55</span></ion-title>
+    <ion-buttons end (click)="notification()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"><span class="noti_counter">0</span></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="PopoverModal()">
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  
+<ion-searchbar class="customsearch" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+</ion-header>
+
+
+<ion-content style="background:#f9f9f9;">
+
+<div class="mapouter">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.9352172945055!2d-71.80711768488622!3d42.25855597919382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e40663492673c1%3A0xaf8e200228d2a96e!2s2+Ionic+Ave%2C+Worcester%2C+MA+01608%2C+USA!5e0!3m2!1sen!2sin!4v1511332038652" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
+
+<div class="list_item">
+  <h1 class="product_title">Top Hotels</h1>
+<ion-list no-lines>
+  <ion-item>
+    <div class="thumb"  item-start>
+       <img src="assets/img/r1.jpg">
+    </div>
+
+    <h2>Barbeque Nation</h2>
+    <h4 class="categories_sub">Hotels</h4>
+    <p>Distance : 350m</p>
+    <p>Address : Dongi Garadgi, Gaji</p>
+    <p class="type">Type : 
+      <button ion-button small color="yellow" class="btn_new">Sushi</button> 
+      <button ion-button small  class="btn_new">Big</button>
+      <button ion-button small color="yellow" class="btn_new">Fish</button> 
+      <button ion-button small  class="btn_new">Reserve</button>
+      <button ion-button small color="yellow" class="btn_new">Map View</button> 
+    </p>
+  </ion-item>
+  <ion-item>
+    <div class="thumb"  item-start>
+       <img src="assets/img/r1.jpg">
+    </div>
+
+    <h2>Barbeque Nation</h2>
+    <h4 class="categories_sub">Hotels</h4>
+    <p>Distance : 350m</p>
+    <p>Address : Dongi Garadgi, Gaji</p>
+    <p class="type">Type : 
+      <button ion-button small color="yellow" class="btn_new">Sushi</button> 
+      <button ion-button small  class="btn_new">Big</button>
+      <button ion-button small color="yellow" class="btn_new">Fish</button> 
+      <button ion-button small  class="btn_new">Reserve</button>
+      <button ion-button small color="yellow" class="btn_new">Map View</button> 
+    </p>
+  </ion-item>
+</ion-list>
+</div>
+
+</ion-content>

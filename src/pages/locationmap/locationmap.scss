@@ -1,0 +1,76 @@
+page-locationmap {
+    .mapouter{
+        width: 100%;
+        height: 35vh;
+        overflow: hidden;
+    }
+    .mapouter iframe{
+        width: 100%;
+        height: 100vh;
+    }
+
+    /*--------------------list item-------------------------*/
+
+    .thumb {
+        width: 90px;
+        border-radius: 5px !important;
+        position: relative;
+        overflow: hidden;
+        height: 91px;
+    }
+    .thumb img {
+        height: 100%;
+        width: auto;
+        min-width: inherit;
+        margin: auto;
+        position: absolute;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        top: 0;
+        max-width: inherit;
+    }
+    .list_item {
+        float: left;
+        width: 100%;
+        padding: 15px;
+    }
+    .list_item .item {
+        border-radius: 6px;
+        padding-left: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 15px #ccc;
+        align-items: inherit !important;
+    }
+    .list_item h2{
+        color: #484848;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        font-weight: 600 !important;
+        font-family: Josefin Sans;
+        text-transform: uppercase;
+    }
+    .categories_sub{
+        color: #a1a0a0;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        font-weight: 600 !important;
+        font-family: Josefin Sans;
+        text-transform: uppercase;
+    }
+    .list_item p {
+        font-size: 11px;
+        color: #484848;
+    }
+    .btn_new {
+        height: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 9px;
+        margin: 0 0 5px 0;
+    }
+
+    .type{
+        white-space: normal;
+    }
+}

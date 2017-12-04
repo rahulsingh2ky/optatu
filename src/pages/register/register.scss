@@ -1,0 +1,228 @@
+page-register {
+
+.image2{ 
+    background-image: url("../assets/img/getstart2.png" );
+}
+.logo2 {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    padding: 4px;
+    margin-top: 30px;
+}
+
+	.content{
+		width: 100%;
+		float: left;
+	}
+	.content .main{
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+	.content .main .text-sec{
+		width: 50%;
+		position: absolute;
+		left: 31px;
+        top: 25px;
+	}
+
+	.content .main .text-sec h2{
+		width: 100%;
+		color: #000;
+		    font-size: 22px;
+			font-family: Josefin Sans;
+       margin-bottom: 7px;
+       font-weight: 500;
+	}
+	.content .main .text-sec h3{
+		width: 100%;
+		color: #fff;
+		    font-size: 19px;
+    font-weight: 300;
+	font-family: Josefin Sans;
+	}
+	.content .main h3 span{
+		color: #000;
+	}
+	.content .main .top-img{
+		width: 100%;
+		float: left;
+	}
+	.content .main .top-img img{
+
+	}
+	.content .main .bottom-img{
+		width: 100%;
+		float: left;
+		position: absolute;
+		bottom: 0;
+
+
+	}
+	.content .main .bottom-img img{
+		width: 100%;
+		float: left;
+	}
+	.content .main .logo{
+		
+		
+    float: left;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 0;
+    left: 106px;
+    text-align: center;
+	}
+
+	.content .main .logo img{
+		width: 69%;
+    position: absolute;
+    left: 18px;
+    top: 13px;
+	}
+	.content-sec{
+		width: 100%;
+		flex: left;
+		padding:30px;
+		padding-top: 100px;
+
+
+	}
+	.content-sec .sign{
+		width: 100%;
+		float: left;
+		margin-top: 25px;
+
+	}
+	.content-sec .sign .form-sec{
+		width: 100%;
+		float: left;
+	}
+	.content-sec .sign .form-sec .list{
+		width: 100%;
+		float: left;
+		margin-bottom: 0px;
+	}
+	.content-sec .sign .form-sec .list .grid{
+			padding: 0px;
+	}
+	.content-sec .sign .form-sec .list .item{
+		width: 100%;
+		float: left;
+		padding: 0px;
+		border:none;
+	}
+	.content-sec .sign .form-sec .list .item .item-inner{
+		border-bottom: 0.55px solid #c8c7cc;
+		padding-right: 0px;
+	}
+	.content-sec .sign .form-sec .list .item input{
+		font-size: 13px;
+        margin-top: 0px;
+        font-weight: 500;
+		font-family: Josefin Sans;
+        letter-spacing: 1px;
+        margin-right: 0px;
+        width: 100%;
+	}
+	.content-sec .sign .form-sec .list .item .label{
+		margin-bottom: 0px;
+        margin-top: 10px;
+        color: #a6a6a6;
+        font-weight: 700;
+		font-family: Josefin Sans;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+	}
+	.content-sec .frgtpwd{
+		width: 100%;
+		float: left;
+		text-align: center;
+	}
+	.content-sec .frgtpwd h3{
+		width: 100%;
+	    float: left;
+	    text-align: right;
+	    color: #000;
+	    font-size: 15px;
+	    font-weight: 500 !important;
+		font-family: Josefin Sans;
+	    margin-top: 10px;
+	}
+	.content-sec .frgtpwd button{
+		width: 100%;
+		float: left;
+		background-color: #000;
+		font-weight: 500;
+		font-family: Josefin Sans;
+        margin-top: 20px !important;
+    	margin: 0;
+	}
+	.content-sec .frgtpwd .register{
+		width: 100%;
+	    float: left;
+	    text-align: center;
+	    color: #a6a6a6;
+	    font-size: 15px;
+	    font-weight: 500 !important;
+		font-family: Josefin Sans;
+	    margin-top: 50px;
+	}
+	.content-sec .frgtpwd .register span{
+		color: #000000;
+	}
+	.left{
+		padding-left: 0px;
+	}
+	.right{
+		padding-right: 0px;
+	}
+	.right.gender .item{
+    font-size: 13px;
+    margin-top: 0px;
+    font-weight: 500;
+	font-family: Josefin Sans;
+    letter-spacing: 1px;
+    margin-right: 0px;
+    width: 100%;
+    min-height: 2.9rem;
+	}
+	.right.gender .item .select{
+	padding: 0px !important;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+	font-family: Josefin Sans;
+    color: #000;
+    font-weight: 500;
+    max-width: 100%;
+	}
+	.right.gender .item .select .select-icon{
+		    width: 19px;
+	}
+	.right.gender .label{
+		margin-bottom: 0px;
+    margin-top: 10px;
+    color: #a6a6a6;
+    font-weight: 700;
+    font-size: 13px;
+	font-family: Josefin Sans;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+	}
+	.upper .text-input{
+		text-transform: uppercase;
+	}
+
+	
+}
+
+
+
+
+

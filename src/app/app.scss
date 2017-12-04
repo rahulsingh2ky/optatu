@@ -1,0 +1,277 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+@font-face{
+    font-family: Josefin Sans;
+    src: url('../assets/fonts/Josefin Sans.woff2');
+}
+body{
+    letter-spacing: 1px;
+}
+/*=============Profile Css===============*/
+.profile_menu{
+    margin: 0;
+    padding: 20px 0;
+}
+
+.profile_menu .item {
+    background: transparent;
+}
+.profile_menu .item h2{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.profile_menu .item p {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+}
+
+.profile_menu ion-avatar {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.profile_menu ion-avatar img{
+    width: 50px;
+    height: 50px;
+}
+
+.sidemenu button {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    min-height: 30px;
+}
+
+button.item.active {
+    background: #fbd506 !important;
+}
+/*=============Header Css===============*/
+.title {
+    text-align: center;
+}
+.maintitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: Josefin Sans;
+    font-weight: 600;
+}
+.toolbar-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: Josefin Sans;
+    font-weight: 600;
+}
+.back-button-text {
+    display: none;
+}
+.subtitle {
+    float: left;
+    width: 100%;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #707070;
+}
+.ion-ios-menus {
+    background:url(../assets/img/burgormenu.png) no-repeat top center;
+    width: 33px;
+    height: 17px;
+    background-size: 22px;
+}
+.ion-md-menus {
+    background:url(../assets/img/burgormenu.png) no-repeat top center;
+    width: 33px;
+    height: 17px;
+    background-size: 22px;
+}
+.noti_counter {
+    position: absolute;
+    font-size: 11px;
+    top: 0px;
+    background: #ff0000;
+    padding: 4px;
+    color: #fff;
+    border-radius: 50%;
+    right: -2px;
+    font-weight: 600;
+}
+.searchbar-input{
+    background: #f4f4f4 !important;
+}
+.customsearch{
+    background: #fff;
+}
+
+/*=============Header Css End===============*/
+/*=============Footer Css start===============*/
+
+.footer_button {
+    float: left;
+    width: 100%;
+    display: flex;
+    padding: 0;
+}
+
+.footer_button .button {
+    border: none !important;
+    margin: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600 !important;
+    height: 44px;
+}
+.footer_button .toolbar-content {
+    display: flex;
+}
+/*=============footer Css End===============*/
+
+.col{
+    padding: 2px;
+}
+button.btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+    font-weight: 600 !important;
+    font-family: Josefin Sans;
+}
+   /*=============Icons Css===============*/
+.bar-buttons {
+    width: 26px;
+}
+.ion-ios-more:before {
+    content: "\f1c9";
+}
+.ion-md-arrow-back:before {
+    content: "\f3cf";
+}
+
+
+.product_title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: Josefin Sans;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+
+/*=========Popover============*/
+
+.popover-content {
+    border-radius: 10px !important;
+    width: 200px !important;
+    min-width: 0;
+    min-height: 0;
+    max-height: 90%;
+    color: #000;
+    background: #fff;
+    top: 63px !important;
+    right: 3px !important;
+    left: inherit !important;
+    position: absolute;
+}
+.popover-md .popover-content{
+    width: 200px !important;
+}
+
+.speech-bubble {
+   position: relative;
+   width: 250px;
+   height: 120px;
+   line-height: 120px;
+   color: #FFFFFF;
+   text-align: center;
+   padding: 0px;
+   background: #ffffff;
+   border-radius: 10px;
+}
+
+.popover-content:after {
+   content: '';
+   position: absolute;
+   border-style: solid;
+   border-width: 0 15px 17px;
+   border-color: #ffffff transparent;
+   display: block;
+   width: 0;
+   z-index: 1;
+   top: -17px;
+   left: 207px;
+}
+
+
+/*---------------menu-css--------------*/
+.user_pic {
+    width: 100%;
+    float: left;
+    background: #fbd505;
+}
+
+.pic_img {
+    width: 60px;
+    float: left;
+    background: #aaa;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.pic_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.user_code {
+    width: 100%;
+    float: left;
+}
+
+.user_code h4 {
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+    color: #454545;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user_code p {
+    width: 100%;
+    float: left;
+    margin: 0;
+    text-transform: lowercase;
+    color: #454545;
+    font-weight: 700;
+        font-size: 12px;
+}
+.item-ios{
+    color:#454545;
+}

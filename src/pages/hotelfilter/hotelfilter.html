@@ -1,0 +1,73 @@
+<!--
+  Generated template for the HotelfilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+  <ion-navbar color="white">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title> Filter</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background: #f9f9f9;">
+  <div class="filter_list">
+     <ion-list no-lines>
+    <ion-item>
+      <ion-label>Hotel Type</ion-label>
+      <ion-select [(ngModel)]="hotel">
+        <ion-option value="1">1 Star</ion-option>
+        <ion-option value="2">2 Star</ion-option>
+        <ion-option value="3">3 Stars</ion-option>
+        <ion-option value="4">4 Stars</ion-option>
+        <ion-option value="5">5 Stars</ion-option>
+        <ion-option value="6">bb</ion-option>
+        <ion-option value="7">Residence</ion-option>
+        <ion-option value="8">Hostel</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Hotel Service</ion-label>
+      <ion-select [(ngModel)]="Service">
+        <ion-option value="1">Service 1</ion-option>
+        <ion-option value="2">Service 2 </ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Room Price</ion-label>
+      <ion-select [(ngModel)]="Price">
+        <ion-option value="1">Price 1</ion-option>
+        <ion-option value="2">Price 2 </ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Location Type</ion-label>
+      <ion-select [(ngModel)]="Location">
+        <ion-option value="1">Location 1</ion-option>
+        <ion-option value="2">Location 2 </ion-option>
+      </ion-select>
+  </ion-item>
+     </ion-list>
+     <div class="tag">wifi <span class="tag_delete">x</span></div>
+     <div class="tag">wifi <span class="tag_delete">x</span></div>
+  </div>
+</ion-content>
+
+<ion-footer no-lines>
+  <ion-toolbar class="footer_button">
+    <button ion-button block color="dark">Add</button>
+    <button ion-button block  color="yellow">Reset All</button>
+  </ion-toolbar>
+</ion-footer>

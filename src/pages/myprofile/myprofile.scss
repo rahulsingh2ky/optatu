@@ -1,0 +1,89 @@
+page-myprofile {
+	.content{
+		width: 100%;
+		float: left;
+	}
+	.content-sec{
+		width: 100%;
+		float: left;
+	}
+	.content .list{
+		width: 100%;
+		float: left;
+		margin: 0;
+	}
+	.content .list .item{
+		width: 100%;
+	    padding-left: 0px;
+	    float: left;
+	}
+	.content .list .item:first-child{
+		border-top: none;
+	}
+	.content .list .item .icon{
+		color: #020202;
+	    font-size: 16px;
+	    font-family: "Josefin Sans";
+	    margin-bottom: 0;
+	}
+	.content .list .item .label{
+		padding-left: 25px;
+    color: #565656;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Josefin Sans";
+	}
+	.content .main{
+		width: 100%;
+		float: left;
+		    margin-top: 30px;
+	}
+	.content .main .top-sec{
+		width: 100%;
+		float: left;
+		text-align: center;
+	}
+	.content .main .top-sec .main-img{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		overflow: hidden;
+    	margin: auto;
+
+	}
+	.content .main .top-sec .main-img img{
+		width: 100%;
+
+	}
+	.content .main .top-sec .text-sec{
+		width: 100%;
+		float: left;
+		    padding: 0px 22px;
+	}
+	.content .main .top-sec .text-sec h3{
+		width: 100%;
+		float: left;
+		color:#000;
+		font-size: 14px;
+        font-weight: 700;
+        font-family: "Josefin Sans";
+        margin-bottom: 5px;
+
+	}
+	.content .main .top-sec .text-sec  h6{
+		width: 100%;
+	    float: left;
+	    color: #6a6a6a;
+	    margin-top: 0px;
+	    border-bottom: 2px dotted #b9b9b9;
+	    padding-bottom: 20px;
+	    font-size: 12px;
+	    font-family: "Josefin Sans";
+	}
+	.content .main .top-sec .text-sec  h6 .icon{
+			color: #6a6a6a;
+			padding-right: 5px;
+            font-size: 15px;
+            font-family: "Josefin Sans";
+	}
+}

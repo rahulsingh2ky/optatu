@@ -1,0 +1,97 @@
+page-myreservation {
+	.headerbottom{
+		width: 100%;
+	    float: left;
+	    background-color: #fbd505;
+	    padding: 16px;
+	}
+	.headerbottom .left{
+		width: 50%;
+		float: left;
+	}
+	.headerbottom .right{
+		width: 50%;
+		float: left;
+	}
+	.headerbottom h3{
+		color: #010101;
+	    font-size: 13px;
+	    letter-spacing: 1.5px;
+	    font-weight: 700 !important;
+	    text-transform: uppercase;
+	    margin: 0;
+	}
+	/*=======content css=======*/
+	.content{
+		border-image-width: 100%;
+		float: left;
+	}
+	.content .item{
+		padding: 0px;
+		border-bottom: 0.55px solid #c8c7cc;
+		position: relative;
+	}
+	.content .item:first-child{
+		border-top: 0 !important;
+	}
+	.content .item-inner{
+		border: none;
+		padding-right: 0!important;
+		border: 0 !important;
+	}
+	.content .item h2{
+		color: #484848;
+	    font-size: 13px;
+	    letter-spacing: 1.5px;
+	    font-weight: 600 !important;
+	    font-family: Josefin Sans;
+	    text-transform: uppercase;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    margin-top: 0;
+	}
+
+	.content .item h4{
+		color: #a1a0a0;
+	    font-size: 9px;
+	    letter-spacing: 1.5px;
+	    font-weight: 600 !important;
+	    font-family: Josefin Sans;
+	    text-transform: uppercase;
+	}
+	 .content ion-thumbnail{
+        height: 50px;
+        width: 50px;
+        min-width: auto;
+        min-height: auto;
+    }
+    .content ion-thumbnail img{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .content .button{
+    	font-size: 11px;
+	    color: #484848;
+	    border-color: #0fa919;
+	    margin-right: 0;
+	    font-weight: 500;
+	    width: 75px;
+    }
+    .content .expire{
+    	border-color: #e3320e;
+    	color: #e3320e;
+    	text-transform: uppercase;
+    	width: 75px;
+    	bottom: -15px;
+    }
+    .content .cut{
+    	position: absolute;
+	    top: 8px;
+	    right: 0;
+	    width: 20px;
+	    height: 20px;
+    }
+
+}

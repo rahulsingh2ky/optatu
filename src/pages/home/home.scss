@@ -1,0 +1,56 @@
+page-home {
+   
+    .cat_list .item {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .cat_list .item-inner {
+        padding: 0 !important;
+    }
+    .cat_list .item-inner .label {
+        margin: 0 !important;
+    }
+    .categories_box {
+        background: #f2f2f2;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        height: 90px;
+    }
+    .hotal{
+        background: url(../assets/img/hotal.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    .restaurant{
+        background: url(../assets/img/restaurant.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    .beaches{
+        background: url(../assets/img/beaches.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    .parking{
+        background: url(../assets/img/parking.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    .entertainment{
+        background: url(../assets/img/entertainment.jpg) no-repeat top center;
+        background-size: cover;
+    }
+
+
+    .categories_box h1 {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 15px;
+        width: 100%;
+        float: left;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+    .categories_box img {
+        filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
+    }
+    
+}

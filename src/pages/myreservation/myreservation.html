@@ -1,0 +1,64 @@
+<!--
+  Generated template for the MyreservationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menus"></ion-icon>
+    </button>
+    <ion-title> <span class="maintitle"> My reservations </span> <span class="subtitle">Thurs 2 july 9:2:55</span></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"><span class="noti_counter">0</span></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="headerbottom" color="yellow">
+  	<div class="left">
+  		<h3>My Rservations</h3>
+  	</div>
+  	<div class="right">
+  		<h3 style="text-align: right;">Time expires</h3>
+  	</div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click)="reservModal()">
+      <ion-thumbnail item-start>
+        <img src="/assets/img/reservation.png">
+      </ion-thumbnail>
+      <h2>Barbeque Nation</h2>
+      <h4>Restaurant</h4>
+      <button ion-button outline item-end>-1h:50m:30s</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="/assets/img/reservation.png">
+      </ion-thumbnail>
+      <h2>Barbeque Nation</h2>
+      <h4>Restaurant</h4>
+      <button ion-button outline item-end>-1h:50m:30s</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="/assets/img/reservation.png">
+      </ion-thumbnail>
+      <h2>Barbeque Nation</h2>
+      <h4>Restaurant</h4>
+      <button ion-button outline item-end class="expire">Expired</button>
+      <div class="cut">
+        <img src="/assets/img/cut.png">
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

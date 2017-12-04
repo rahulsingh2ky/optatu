@@ -1,0 +1,168 @@
+page-editprofile {
+    .content{
+        width: 100%;
+        float: left;
+    }
+    .content .main{
+        width: 100%;
+        float: left;
+            margin-top: 30px;
+    }
+    .content .main .top-sec{
+        width: 100%;
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+    .content .main .top-sec .input-sec{
+        width: 30px;
+        height: 30px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 5px #656565;
+        overflow: hidden;
+        background-color: #000;
+        position:absolute;
+        border-radius: 50%;
+        top: 69px;
+        right: 103px;
+
+    }
+    .content .main .top-sec .input-sec .upld{
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+    .content .main .top-sec .input-sec input{
+        width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    opacity: 0;
+    }
+    .content .main .top-sec .input-sec .icon{
+        position: absolute;
+    top: 5px;
+    right: 7px;
+        color: #fff;
+    }
+
+    .content .main .top-sec .main-img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+
+    }
+    .content .main .top-sec .main-img img{
+        width: 100%;
+
+    }
+    .content .main .top-sec .text-sec{
+        width: 100%;
+        float: left;
+            padding: 0px 22px;
+    }
+    .content .main .top-sec .text-sec h3{
+        width: 100%;
+        float: left;
+        color:#000;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Josefin Sans";
+        margin-bottom: 2px;
+
+    }
+    .content .main .top-sec .text-sec  h6{
+        width: 100%;
+        float: left;
+        color: #6a6a6a;
+        margin-top: 0px;
+        border-bottom: 2px dotted #b9b9b9;
+        padding-bottom: 20px;
+        font-size: 12px;
+        font-family: "Josefin Sans";
+    }
+    .content .main .top-sec .text-sec  h6 .icon{
+            color: #6a6a6a;
+            padding-right: 5px;
+            font-size: 15px;
+            font-family: "Josefin Sans";
+    }
+    .content-sec{
+        width: 100%;
+        float: left;
+        padding: 14px
+    }
+    .content-sec .form-sec{
+        width: 100%;
+        float: left;
+    }
+    .content-sec .form-sec .list{
+        width: 100%;
+        float: left;
+        margin: 0px;
+    }
+    .content-sec .form-sec .list .item{
+        width: 100%;
+        float: left;
+        border: 0.55px solid #dddddd;
+        border-radius: 5px;
+        padding-left: 8px;
+    }
+    .content-sec .form-sec .list .item .item-inner{
+        width: 100%;
+        float: left;
+        padding-right: 0px;
+    }
+    .upper .text-input{
+        text-transform: uppercase;
+    }
+    .content-sec .form-sec .list .item .item-inner .text-input{
+        margin-right: 0px;
+        width: 100%;
+        float:left;
+        margin: 0px;
+        font-size: 12px;
+        font-family: "Josefin Sans";
+       
+    }
+    ion-textarea .text-input{
+        height: 70px;
+    
+    }
+    .enter{
+        padding: 5px 0;
+    }
+    .content-sec .form-sec .list .item .input{
+         font-size: 12px;
+         color: #565656;
+         font-weight: 500;  
+         font-family: "Josefin Sans";
+    }
+    .content-sec .form-sec .list .item .select{
+        width: 100%;
+        float: left;
+        max-width: 100%;
+        font-size: 12px;
+        font-family: "Josefin Sans";
+        padding: 13px 9px 8px 0px;
+         color: #565656;
+    }
+    .btn-sec .button{
+        width: 100%;
+        float: left;
+        background-color: #000;
+        font-weight: 500;
+        font-family: "Josefin Sans";
+       margin: auto;
+       border-radius: 0px;
+    }
+    .btn-sec{
+        width: 100%;
+        float: left;
+    }
+    
+}

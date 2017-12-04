@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="white">
+     <button ion-button menuToggle>
+      <ion-icon name="menus"></ion-icon>
+    </button>
+    <ion-title> <span class="maintitle"> Reserve now </span> <span class="subtitle">Thurs 2 july 9:2:55</span></ion-title>
+    <ion-buttons end (click)="notification()">
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"><span class="noti_counter">0</span></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="PopoverModal()">
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+<ion-searchbar class="customsearch" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list class="cat_list" no-padding no-lines>
+  <ion-item (click)="hotels()">
+    <div class="categories_box hotal">
+      <img width="45px" src="assets/img/icon1.png">
+      <h1>Hotels</h1>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="categories_box restaurant">
+      <img width="45px" src="assets/img/icon2.png">
+      <h1>restaurants</h1>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="categories_box beaches">
+      <img width="45px" src="assets/img/icon3.png">
+      <h1>beaches</h1>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="categories_box parking">
+      <img width="45px" src="assets/img/icon3.png">
+      <h1>parkings</h1>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="categories_box entertainment">
+      <img width="45px" src="assets/img/icon3.png">
+      <h1>entertainments</h1>
+    </div>
+  </ion-item>
+</ion-list>
+</ion-content>

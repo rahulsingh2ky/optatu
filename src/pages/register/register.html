@@ -1,0 +1,170 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content style="background:f2f2f2">
+    <div class="main">
+  <div class="logo2">
+    <img src="assets/img/logo2.png">
+  </div>
+  </div>
+  <div class="content-sec">
+    <div class="sign">
+      <form class="form-sec" #signupForm="ngForm" novalidate>
+        <ion-list>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-6 class="left">
+              <ion-item>
+                <ion-label stacked >First name</ion-label>
+                <ion-input type="text" [(ngModel)]="data.fname" name="fname" placeholder="First Name" #fname="ngModel" required></ion-input>
+                <ion-label class="alert alert-danger" color="danger">
+                  <div *ngIf="fname.errors && (fname.dirty || fname.touched)">
+                    <div [hidden]="!fname.errors.required">
+                     Field is required
+                    </div>
+                  </div>
+                </ion-label>
+
+              </ion-item>
+            </ion-col>
+            <ion-col col-6 class="right">
+              <ion-item>
+                <ion-label stacked>Last name</ion-label>
+                  <ion-input type="text" [(ngModel)]="data.lname" name="lname" placeholder="Last Name" #lname='ngModel' required></ion-input>
+              
+              <ion-label class="alert alert-danger" color="danger">
+                <div *ngIf="lname.errors && (lname.dirty || lname.touched)">
+                  <div [hidden]="!lname.errors.required">
+                    Field is required
+                  </div>
+                </div>
+              </ion-label>
+            </ion-item>
+              
+            </ion-col>
+            <ion-col col-6 class="left">
+              <ion-item>
+                <ion-label stacked>Birthday</ion-label>
+                <ion-input type="date" class="upper" [(ngModel)]="data.date" name="date" placeholder="Date" [ngModelOptions]="{standalone: true}" #date='ngModel' required></ion-input>
+           
+              <ion-label class="alert alert-danger" color="danger">
+                <div *ngIf="date.errors && (date.dirty || date.touched)">
+                  <div [hidden]="!date.errors.required">
+                    Field is required
+                  </div>
+                </div>
+              </ion-label>
+            </ion-item>
+            </ion-col>
+
+            <ion-col col-6 class="right gender" required>
+              <ion-label>Gender</ion-label>
+              <ion-item>
+               
+                <ion-select  [(ngModel)]="data.gender" name="gender" #gender="ngModel">
+                  <ion-option value="f">Female</ion-option>
+                  <ion-option value="m">Male</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 class="left right">
+              <ion-item>
+                <ion-label stacked >Address</ion-label>
+                <ion-input type="text" [(ngModel)]="data.address" name="address" placeholder="Address" #address='ngModel' required ></ion-input>
+            
+              <ion-label class="alert alert-danger" color="danger">
+                <div *ngIf="address.errors && (address.dirty || address.touched)">
+                  <div [hidden]="!address.errors.required">
+                    Field is required
+                  </div>
+                </div>
+              </ion-label>
+            </ion-item>
+            </ion-col>
+            <ion-col col-12 class="left right">
+              <ion-item>
+                <ion-label stacked>Phone Number</ion-label>
+                <ion-input type="tel" [(ngModel)]="data.phone" name="phone" placeholder="Mobile Number"  #phone='ngModel' 
+                pattern='[7/8/9][0-9]{9}' required ></ion-input>
+             
+              <ion-label  color="danger">
+                
+                       <div *ngIf="phone.errors && (phone.dirty || phone.touched)">
+                       <div [hidden]="!phone.errors.required" >
+                         Field is required
+                        </div>
+                        <div [hidden]="!phone.errors.pattern" >
+                         Invalid Format
+                        </div>
+                         <div [hidden]="!phone.errors.maxlength" >
+                         Maximum 9 number
+                        </div>
+                    </div>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 class="left right">
+              <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input type="email"  type="email" [(ngModel)]="data.email" name="email" placeholder="Email Address"   #email='ngModel' required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' required></ion-input>
+             
+              <ion-label  class="alert alert-danger" color="danger">
+                <div *ngIf="email.errors && (email.dirty || email.touched)" >
+                  <div [hidden]="!email.errors.required" >
+                    Email is required
+                   </div>
+                   <div [hidden]="!email.errors.pattern" >
+                    Invalid email
+                   </div>
+                </div>
+               </ion-label>
+              </ion-item>
+
+           </ion-col>
+
+
+          <ion-item>
+            <ion-input type="password" minlength="6" maxlength="10" [(ngModel)]="data.password" name="password" placeholder="Password" #password='ngModel' required ></ion-input>
+          </ion-item>
+       <ion-label class="alert alert-danger" color="danger">
+          <div *ngIf="password.errors && (password.dirty || password.touched)">
+          <div [hidden]="!password.errors.required" >
+           Password is required
+          </div>
+      </div>
+       <div *ngIf="password.errors && (password.dirty || password.touched)" >
+         <div [hidden]="!password.errors.minlength" >
+            Minimum length 6 character 
+          </div>
+          <div [hidden]="!password.errors.maxlength" >
+            Maximum length 6 character 
+          </div>
+      </div>
+     </ion-label>
+        
+          <ion-item>
+            <ion-input type="password" minlength="6" maxlength="10" [(ngModel)]="data.cpassword" name="cpassword" placeholder="Confirm Password" #cpassword='ngModel' required></ion-input>
+          </ion-item>
+    <ion-label class="alert alert-danger" color="danger">
+    <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" >
+         <div [hidden]="!cpassword.errors.required" >
+           Confirm password is required
+          </div>
+      </div>
+      </ion-label>
+          </ion-row>
+          </ion-grid>
+        </ion-list>
+        <button ion-button (click)="reg(signupForm)"  [disabled]="!signupForm.form.valid" >Register</button>
+     </form>
+    </div>
+    <div class="frgtpwd">
+   
+      <h3 class="register">I have an account? <span>Login</span></h3>
+    </div>
+
+  </div>
+</ion-content>
