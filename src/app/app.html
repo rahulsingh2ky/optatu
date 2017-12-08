@@ -18,9 +18,10 @@
     </div>
   </ion-col>
      <ion-col col-8>
-      <div class="user_code">
-     <h4>USER NAME</h4>
-     <P>abc@gmail.com</P>
+      <div class="user_code" *ngIf="username!=null">
+        
+     <h4> {{username.firstname+' '+username.lastname}} </h4>
+     <P>{{username.email}}</P>
    </div>
    </ion-col>
   </ion-row>
@@ -29,8 +30,9 @@
   </div>
 
     <ion-list no-lines class="sidemenu">
+        
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
+        <ion-icon item-left [name]="p.icon"> </ion-icon>
         {{p.title}}
       </button>
        

@@ -30,14 +30,14 @@
 
  <div class="content-sec">
   <div class="sign">
-   <form class="form-sec">
+   <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
 
     <ion-list>
       <ion-item>
         <ion-label stacked>USERNAME</ion-label>
         <ion-input type="email" [(ngModel)]="data.username" name="username" placeholder="Email Address"   #username='ngModel' required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' required ></ion-input>
         <ion-label  class="alert alert-danger" color="danger">
-          <div *ngIf="username.errors && (username.dirty || username.touched)" >
+          <div *ngIf="username.errors && (username.dirty)" >
             <div [hidden]="!username.errors.required" >
               Email is required
              </div>
@@ -52,7 +52,7 @@
 
       <ion-item>
         <ion-label stacked>PASSWORD</ion-label>
-        <ion-input type="password" minlength="6" maxlength="10" [(ngModel)]="data.password" name="password" placeholder="Password" #password='ngModel' required ></ion-input>
+        <ion-input type="password" minlength="5" maxlength="10" [(ngModel)]="data.password" name="password" placeholder="Password" #password='ngModel' required ></ion-input>
         <ion-label class="alert alert-danger" color="danger">
           <div *ngIf="password.errors && (password.dirty || password.touched)" >
                <div [hidden]="!password.errors.required" >
@@ -64,11 +64,13 @@
       </ion-item>
 
     </ion-list>
+       
+        <div class="btn-sec">
+   <button class="custom_btn" type="submit" [disabled]="!loginForm.form.valid" >Sign In </button>
+   </div>
 
    </form>
  </div>
- 
-
  
 
 
@@ -76,9 +78,7 @@
    <h1><span (click)="forgtpwd()">Forgot password?</span></h1>
 </div>
 
-   <div class="btn-sec">
-   <button ion-button full block ><span (click)="getstart()">Sign In</span></button>
-   </div>
+ 
    <div class="registerlast">
    <h3 class="register">Don’t have an account? <span (click)="register()">Register</span></h3>
  </div>

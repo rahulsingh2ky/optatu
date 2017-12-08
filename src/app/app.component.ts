@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform,Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SigninPage } from '../pages/signin/signin';
@@ -23,18 +23,37 @@ import { PrivacypolicyPage } from '../pages/privacypolicy/privacypolicy';
 
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+    
   @ViewChild(Nav) nav: Nav;
+  username;
+  
 
   rootPage: any = SigninPage;
 
   pages: Array<{title: string, component: any, icon : string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public events: Events) {
+       this.events.subscribe('buyer', data => {
+           console.log('gfdgfghf');
+           console.log(data);
+            this.username = JSON.parse(localStorage.getItem("USER_DATA"));
+              console.log(this.username.email);
+           
+       })
+      
+this.initializeApp();
+
+//     if ((localStorage.getItem("USER_DATA")!=null)){  
+//            alert("userdata");
+//         
+//        this.username = JSON.parse(localStorage.getItem("USER_DATA"));
+//              console.log(this.username.email);
+//        }
 
     // used for an example of ngFor and navigation    
     this.pages = [
@@ -48,19 +67,27 @@ export class MyApp {
     ];
 
   }
-
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     });
+    
+    
+    
   }
-
+ 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+     
+         
+       
+        
+        
     this.nav.setRoot(page.component);
   }
 }

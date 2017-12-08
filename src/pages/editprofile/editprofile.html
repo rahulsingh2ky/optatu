@@ -1,94 +1,108 @@
-<!--
-  Generated template for the SigninPage page.
+        <!--
+          Generated template for the SigninPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+          See http://ionicframework.com/docs/components/#navigation for more info on
+          Ionic pages and navigation.
+        -->
+        <ion-header>
 
-  <ion-navbar color="theme-header">
-    <ion-title>Edit Profile</ion-title>
-  </ion-navbar>
+          <ion-navbar color="theme-header">
+            <ion-title>Edit Profile</ion-title>
+          </ion-navbar>
 
-</ion-header>
+        </ion-header>
 
 
-<ion-content>
-  <div class="main">
-    <div class="top-sec">
-      <div class="main-img">
-        <img src="assets/img/profile.png">
-      </div>
-      <div class="input-sec">
-      <div class="upld">
-        <input type="file">
-        <ion-icon name="camera"></ion-icon>
-      </div>
-      </div>
-      <div class="text-sec">
-        <h3>Optatu Fast Service</h3>
-        <h6><ion-icon ios="ios-pin" md="md-pin"></ion-icon> Chandigarh</h6>
-      </div>
-    </div>
-  </div>
-  <div class="content-sec">
-    <div class="form-sec">
-      <form>
-        <ion-list>
+        <ion-content>
+          <div class="main">
+            <div class="top-sec">
+               <div class="main-img">
+               <img *ngIf="srcImage" class="c" [src]="srcImage">
+         <img *ngIf="!srcImage" class="c" src="assets/img/profile.png">
+              </div>
+               <div class="input-sec" (click)="CameraAction()">
+              <div class="upld">
+
+                <ion-icon name="camera"></ion-icon>
+              </div>
+              </div>
+              <div class="text-sec">
+                <h3>Optatu Fast Service</h3>
+                <h6><ion-icon ios="ios-pin" md="md-pin"></ion-icon> Chandigarh</h6>
+              </div>
+            </div>
+          </div>
+         <div class="content-sec">
+                <div class="form-sec">
+          <form #editprofile="ngForm" novalidate (submit)="submitinfo(editprofile)">
+          <ion-list>
           <ion-grid>
-            <ion-row>
-              <ion-col col-12>
+          <ion-row>
+                <ion-col col-12>
+                          <ion-item>
+                            <ion-input type="text" placeholder="First name" [(ngModel)]="data.firstname" name="firstname" #firstname="ngModel" required></ion-input>
+                                  </ion-item>
+                                        </ion-col>
+                                                <ion-col col-12>
+                                                  <ion-item>
+                                                    <ion-input type="text" placeholder="Last name" [(ngModel)]="data.lastname" name="lastname" #lastname="ngModel" required></ion-input>
+                                                  </ion-item>
+                                                </ion-col>
+                                                        <ion-col col-12>
+                                                           <ion-item>
+                                                            <ion-input type="email" placeholder="Email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$" required></ion-input>
+                                                          </ion-item>
+                                                                <div class="alert alert-danger" color="danger">
+                    <div *ngIf="email.errors && (email.dirty || email.touched)">
+                      <div [hidden]="!email.errors.pattern">
+                        Invalid email
+                      </div>
+                    </div>
+                  </div>
+                                                        </ion-col>
+                                                        <ion-col col-12>
+                                                           <ion-item>
+                                                            <ion-input type="tel" placeholder="Phone number" [(ngModel)]="data.phone" name="phone" #phone="ngModel"  required></ion-input>
+                                                          </ion-item>
+                                                                <div class="alert alert-danger" color="danger">
+                          <div *ngIf="phone.errors && (phone.dirty || phone.touched)">
+                            <div [hidden]="!phone.errors.pattern">
+                              invalid phone format!
+                            </div>
+                          </div>
+                        </div>
+                                                        </ion-col>
+                                                        <ion-col col-6>
+                                                           <ion-item>
+                                                            <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="data.dob" name="dob" #dob="ngModel"  required></ion-datetime>
+                                                          </ion-item>
+                                                        </ion-col>
+                                                        <ion-col col-6>
+                                                           <ion-item>
+                                                                <ion-select [(ngModel)]="data.gender" name="gender" #gender="ngModel" required>
+                                                                    <ion-option value="female">Female</ion-option>
+                                                                    <ion-option value="male">Male</ion-option>
+                                                                  </ion-select>
+                                                          </ion-item>
+                                                        </ion-col>
+                                                        <ion-col col-12>
+                                                             <div style="position: relative; overflow: hidden;">
 
-              <ion-item>
-                <ion-input type="text" placeholder="Name"></ion-input>
-              </ion-item>
-            </ion-col>
+                                                            <ion-item>
+                                                                    <ion-textarea class="enter" placeholder="Enter your address...." [(ngModel)]="data.address" name="address" #address="ngModel" required></ion-textarea>
+                                                                </ion-item> 
+                                                             </div>
+                                                        </ion-col>
+                                                </ion-row>
+                                        </ion-grid>
 
-            <ion-col col-12>
-              <ion-item>
-                <ion-input type="text" placeholder="Last name"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-12>
-               <ion-item>
-                <ion-input type="email" placeholder="Email"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-12>
-               <ion-item>
-                <ion-input type="tel" placeholder="Phone number"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-               <ion-item>
-                <ion-input type="date" placeholder="Birth Date" class="upper"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-               <ion-item>
-               
-                
-                  <ion-select>
-                  <ion-option value="f">Female</ion-option>
-                  <ion-option value="m">Male</ion-option>
-                </ion-select>
-                
-              </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <ion-item>
-                  <ion-textarea class="enter" placeholder="Enter your address...."></ion-textarea>
-              </ion-item> 
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+                                </ion-list>
+                                 <div class="btn-sec">
+        <button ion-button type="submit"  [disabled]="!editprofile.valid">Save</button>
+        </div>
+        </form>
+        </div>
+        </div>
 
-      </ion-list>
-      </form>
-    </div>
-  </div>
-  <div class="btn-sec">
-    <button ion-button>Save</button>
-  </div>
 
-</ion-content>
+        </ion-content>

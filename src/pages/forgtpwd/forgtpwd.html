@@ -27,15 +27,31 @@
 	</div>
 	<div class="content-sec">
 		<div class="sign">
-			<form class="form-sec">
+			<form class="form-sec" #forgetpwd="ngForm" novalidate (submit)="forgot(forgetpwd)">
 				<ion-list>
 
 				  <ion-item>
 				    <ion-label stacked>Enter your registered email</ion-label>
-				    <ion-input type="email"></ion-input>
+				    <ion-input type="email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$" required></ion-input>
 				  </ion-item>
+					 <div class="alert alert-danger" color="danger">
+            <div *ngIf="email.errors && (email.dirty || email.touched)">
+              <div [hidden]="!email.errors.required">
+                Email is required
+              </div>
+              <div [hidden]="!email.errors.pattern">
+                Invalid email
+              </div>
+            </div>
+          </div>
 				</ion-list>
+				<div class="frgtpwd">
+			<button ion-button type="submit" [disabled]="!forgetpwd.valid">Submit</button>
+			</div>
 			</form>
+		</div>
+		<div class="frgtpwd">
+			<h3 class="register">Don't have an account? <span (click)="signupPage()">Register</span></h3>
 		</div>
 		<div class="frgtpwd">
 			<button ion-button>Submit</button>
