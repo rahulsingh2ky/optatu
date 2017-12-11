@@ -48,7 +48,7 @@
             <ion-col col-6 class="left">
               <ion-item>
                 <ion-label stacked>Birthday</ion-label>
-                <ion-input type="date" class="upper" [(ngModel)]="data.date" name="date" placeholder="Date" [ngModelOptions]="{standalone: true}" #date='ngModel' required></ion-input>
+                <ion-input type="date" class="upper" [(ngModel)]="data.date" name="date" placeholder="Date"  #date='ngModel' required></ion-input>
            
               <ion-label class="alert alert-danger" color="danger">
                 <div *ngIf="date.errors && (date.dirty || date.touched)">
@@ -63,10 +63,9 @@
             <ion-col col-6 class="right gender" required>
               <ion-label>Gender</ion-label>
               <ion-item>
-               
-                <ion-select  [(ngModel)]="data.gender" name="gender" #gender="ngModel">
-                  <ion-option value="f">Female</ion-option>
-                  <ion-option value="m">Male</ion-option>
+                <ion-select [(ngModel)]="data.gender" >
+                  <ion-option value="f" >Female</ion-option>
+                  <ion-option value="m" >Male</ion-option>
                 </ion-select>
               </ion-item>
             </ion-col>
@@ -127,7 +126,7 @@
 
 
           <ion-item>
-            <ion-input type="password" minlength="6" maxlength="10" [(ngModel)]="data.password" name="password" placeholder="Password" #password='ngModel' required ></ion-input>
+            <ion-input type="password" minlength="6" maxlength="12" [(ngModel)]="data.password" name="password" placeholder="Password" #password='ngModel' required ></ion-input>
           </ion-item>
        <ion-label class="alert alert-danger" color="danger">
           <div *ngIf="password.errors && (password.dirty || password.touched)">
@@ -140,13 +139,13 @@
             Minimum length 6 character 
           </div>
           <div [hidden]="!password.errors.maxlength" >
-            Maximum length 6 character 
+            Maximum length 12 character 
           </div>
       </div>
      </ion-label>
         
           <ion-item>
-            <ion-input type="password" minlength="6" maxlength="10" [(ngModel)]="data.cpassword" name="cpassword" placeholder="Confirm Password" #cpassword='ngModel' required></ion-input>
+            <ion-input type="password" minlength="6" maxlength="12" [(ngModel)]="data.cpassword" name="cpassword" placeholder="Confirm Password" #cpassword='ngModel' required></ion-input>
           </ion-item>
     <ion-label class="alert alert-danger" color="danger">
     <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" >
@@ -163,7 +162,7 @@
     </div>
     <div class="frgtpwd">
    
-      <h3 class="register">I have an account? <span>Login</span></h3>
+      <h3 class="register" (click)="home()" >I have an account? <span >Login</span></h3>
     </div>
 
   </div>

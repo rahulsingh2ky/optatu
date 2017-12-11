@@ -4,7 +4,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
  import 'rxjs/add/operator/map'
   import 'rxjs/Rx';
   import { Http, Headers, RequestOptions } from '@angular/http';
-
+  import { GetstartPage } from '../getstart/getstart';
+  
 /**
  * Generated class for the EditprofilePage page.
  *
@@ -16,7 +17,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'editprofile.html',
 })
 export class EditprofilePage {
- srcImage: any;
+  srcImage: any;
  public data={};
  public dataa={};
     
@@ -45,13 +46,15 @@ export class EditprofilePage {
       if (response.status != null){
            this.data={
           address : response.data.address,
-        gender: response.data.gender,
+          gender: response.data.gender,
         firstname : response.data.firstname,
         lastname : response.data.lastname,              
         dob : response.data.dob,
         email : response.data.email,
         //role : response.data.role,
         phone: response.data.phone,
+        //srcImage = response.data.user_image
+
        };
           console.log(this.data);
          
@@ -91,6 +94,7 @@ export class EditprofilePage {
         .map(res => res.json())
         .subscribe(dataa => {
           console.log(dataa);
+          this.navCtrl.push(GetstartPage)
          
         })
         
@@ -197,8 +201,9 @@ this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk
      Loading.present().then(() => {
             this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk.com/api/user_profile_pic', postdata).map(res => res.json()).subscribe(data => {
               Loading.dismiss();
-              console.log(data)
-              alert("saving image")
+              console.log(data);
+              alert(JSON.stringify(data));
+              alert("saving image");
 
             },(err)=>{
               console.log(JSON.stringify(err))
