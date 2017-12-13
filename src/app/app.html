@@ -13,14 +13,14 @@
     <ion-grid>
   <ion-row>
     <ion-col col-4>
-    <div class="pic_img">
-      <img src="assets/img/user.jpg">
-    </div>
+        <img *ngIf="prof" class="pick0" [src]="prof">
+        <img *ngIf="!prof" class="pick0" src="assets/img/profile.png">
+  
   </ion-col>
      <ion-col col-8>
       <div class="user_code" *ngIf="username!=null">
         
-     <h4> {{username.firstname+' '+username.lastname}} </h4>
+     <h4> {{username.firstname+' '+ username.lastname}} </h4>
      <P>{{username.email}}</P>
    </div>
    </ion-col>
@@ -38,7 +38,6 @@
        
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

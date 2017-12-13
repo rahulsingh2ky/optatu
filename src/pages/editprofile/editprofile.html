@@ -17,7 +17,7 @@
           <div class="main">
             <div class="top-sec">
               <div class="main-img">
-                <img *ngIf="srcImage" class="pick0" [src]="srcImage">
+             <img *ngIf="srcImage" class="pick0" [src]="srcImage">
           <img *ngIf="!srcImage" class="pick0" src="assets/img/profile.png">
                </div>
                <div class="input-sec" (click)="CameraAction()">
@@ -27,8 +27,8 @@
                </div>
                </div>
               <div class="text-sec">
-                <h3>Optatu Fast Service</h3>
-                <h6><ion-icon ios="ios-pin" md="md-pin"></ion-icon> Chandigarh</h6>
+                <h3>{{data.firstname}}  {{data.lastname}}</h3>
+                <h6><ion-icon ios="ios-pin" md="md-pin"></ion-icon>{{data.phone}}</h6>
               </div>
             </div>
           </div>

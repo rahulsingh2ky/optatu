@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, LoadingController, AlertController,ActionSheetController} from 'ionic-angular';
+import { NavController, NavParams, ToastController, LoadingController, AlertController,Events,ActionSheetController} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
  import 'rxjs/add/operator/map'
   import 'rxjs/Rx';
   import { Http, Headers, RequestOptions } from '@angular/http';
   import { GetstartPage } from '../getstart/getstart';
+import { HomePage } from '../home/home';
   
 /**
  * Generated class for the EditprofilePage page.
@@ -18,15 +19,18 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class EditprofilePage {
   srcImage: any;
+  Events
+
  public data={};
  public dataa={};
     
-  constructor(public navCtrl: NavController, public actionSheetCtrl:ActionSheetController,
+  constructor(public events: Events, public navCtrl: NavController, public actionSheetCtrl:ActionSheetController,
    public navParams: NavParams,    public toastCtrl: ToastController,public loadingCtrl: LoadingController,
 
     public camera: Camera, public http: Http) {this.getuser();
   }
   ionViewDidLoad(){
+     
     console.log('ionViewDidLoad EditprofilePage');
     
   }
@@ -40,10 +44,23 @@ export class EditprofilePage {
       id : JSON.parse(localStorage.getItem('USER_DATA'))._id
 
     }
+
+
     var Serialized = this.serializeObj(data);
+    var Serialized = this.serializeObj(data);
+    var Loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      cssClass: 'loader'
+  
+  });
+    Loading.present().then(()=> 
     this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk.com/api/userinfo', Serialized, options).map(res => res.json()).subscribe(response => {
-           console.log(response);
+        console.log(response);
+
+        console.log( response.data.user_image);
+        this.srcImage=response.data.user_image;
       if (response.status != null){
+           Loading.dismiss();
            this.data={
           address : response.data.address,
           gender: response.data.gender,
@@ -51,23 +68,19 @@ export class EditprofilePage {
         lastname : response.data.lastname,              
         dob : response.data.dob,
         email : response.data.email,
-        //role : response.data.role,
+        //  role : response.data.role,
         phone: response.data.phone,
-        //srcImage = response.data.user_image
-
        };
           console.log(this.data);
+          this.srcImage=response.data.user_image;
          
       }
        
-    })
+    }))
    }
-     
-    
-    
-    
+      
  submitinfo(editinfo) {
-    console.log(editinfo.value);
+    console.log(editinfo.value.dob);
     let headers = new Headers();
     
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
@@ -80,7 +93,7 @@ export class EditprofilePage {
         first_name: editinfo.value.firstname,
         last_name: editinfo.value.lastname,
         phone: editinfo.value.phone,
-        dob: editinfo.value.dob,
+        birth_day : editinfo.value.dob,
         gender: editinfo.value.gender,
         address: editinfo.value.address,
         id: JSON.parse(localStorage.getItem('USER_DATA'))._id,
@@ -91,16 +104,15 @@ export class EditprofilePage {
       console.log(this.dataa);
       var serialized = this.serializeObj(this.dataa);
       this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk.com/api/user_data_update', serialized, options)
-        .map(res => res.json())
-        .subscribe(dataa => {
-          console.log(dataa);
-          this.navCtrl.push(GetstartPage)
+        .map(response => response.json())
+        .subscribe(response => {
+          console.log(response);
+          this.events.publish('rahul', response);
+          this.navCtrl.push(HomePage)
          
         })
         
     }
-  
-
 serializeObj(obj) {
     var result = [];
     for (var property in obj)
@@ -152,7 +164,7 @@ this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk
 
  alert(JSON.stringify(data));
               console.log(data)
-              alert("saving image")
+              alert("saving image");
 
             },(err)=>{
               alert(JSON.stringify(err))
@@ -170,7 +182,7 @@ this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk
         text: 'Gallery',
         handler: () => {
           console.log("Gallery Clicked");
-          //	alert("get Picture")
+          	alert("get Picture")
           // this.loading.present();
 
           const options: CameraOptions = {

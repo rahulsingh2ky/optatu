@@ -9,7 +9,13 @@
     <ion-title>
      Profile
     </ion-title>
+    <button (click)="setBackButtonAction()"ion-button="bar-button">
+      <span class="button-inner"><ion-icon class="back-button-icon icon icon-ios back-button-icon-ios ion-ios-arrow-back" role="img" aria-label="arrow back"></ion-icon>
+      <span class="back-button-text back-button-text-ios" style="transform: translateX(0px);"></span></span>
+      <div class="button-effect"></div>
+    </button>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content>
@@ -17,11 +23,12 @@
   <div class="main">
     <div class="top-sec">
       <div class="main-img">
-        <img src="assets/img/profile.png">
+          <img *ngIf="profpic" class="pick0" [src]="profpic">
+          <img *ngIf="!profpic" class="pick0" src="assets/img/profile.png">
       </div>
       <div class="text-sec">
-        <h3>{{abc.firstname+' '+abc.lastname}}</h3>
-        <h6>{{abc.email}}</h6>
+        <h3>{{firstname +' '+ lastname}}</h3>
+        <h6></h6>
       </div>
     </div>
   </div>

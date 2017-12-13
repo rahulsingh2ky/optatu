@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage,NavParams, NavController,AlertController,Events} from 'ionic-angular';
+import {  MenuController } from 'ionic-angular/index';
 import { RegisterPage } from '../register/register';
 import { ForgtpwdPage } from '../forgtpwd/forgtpwd';
 import { GetstartPage } from '../getstart/getstart';
+import { HomePage } from '../home/home';
 import { Http, Headers, RequestOptions } from '@angular/http';
  import 'rxjs/add/operator/map'
   import 'rxjs/Rx';
@@ -23,7 +25,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 export class SigninPage {
   public data = {}; username;password;
 
-  constructor(public navCtrl: NavController,
+  constructor( private menu: MenuController,public navCtrl: NavController,
       public http: Http,
       public alertCtrl: AlertController,
       public events: Events
@@ -48,9 +50,24 @@ export class SigninPage {
        
   }
   
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
+    console.log("didenter");
 
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(false, 'menu1');
+  }
+  ionViewDidLeave() {
+    // Don't forget to return the swipe to normal, otherwise 
+    // the rest of the pages won't be able to swipe to open menu
+    this.menu.swipeEnable(true);
+
+    // If you have more than one side menu, use the id like below
+    // this.menu.swipeEnable(true, 'menu1');
+   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SigninPage');
+
   }
 
   register() {
@@ -79,12 +96,13 @@ export class SigninPage {
       
       this.http.post('http://default-environment.mm4pnmggzz.us-east-2.elasticbeanstalk.com/api/loginuser', Serialized, options).map(res => res.json()).subscribe(response => {
        // this.Loading.dismiss();
+       localStorage.setItem("USER_DATA",JSON.stringify(response.userinfo));
         alert(JSON.stringify(response));
         console.log(response);
-          localStorage.setItem("USER_DATA",JSON.stringify(response.userinfo));   
-          alert(JSON.stringify( localStorage.getItem("USER_DATA")));
-            this.events.publish('buyer', 'rahul');     
-        if (response.status == true) {
+
+       this.events.publish('rahulafteredit', response);
+        if (response.status == true) {      
+        localStorage.setItem("USER_DATA",JSON.stringify(response.userinfo));
             let alert = this.alertCtrl.create({
               title: 'Logged in',
               subTitle: response.message
@@ -93,7 +111,7 @@ export class SigninPage {
             setTimeout(()=>alert.dismiss(),1500);
          
         
-              this.navCtrl.push(GetstartPage);
+              this.navCtrl.push(HomePage);
         } else {
             let alert = this.alertCtrl.create({
               title: 'Invalid credentials',
@@ -103,7 +121,7 @@ export class SigninPage {
          
             alert.present();
             setTimeout(()=>alert.dismiss(),1500);
-            this.navCtrl.push(GetstartPage);
+           
       }
     })
       

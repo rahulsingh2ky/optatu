@@ -12,6 +12,9 @@ page-myprofile {
 		float: left;
 		margin: 0;
 	}
+	.back-button{
+        display: none !important;
+    }
 	.content .list .item{
 		width: 100%;
 	    padding-left: 0px;
